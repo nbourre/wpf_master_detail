@@ -10,10 +10,16 @@
         Title="Projet Master-Detail" Height="450" Width="800">
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:StudentListViewModel}">
-            <views:StudentListView DataContext="{Binding}"/>
+            <views:CourseListView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:StudentViewModel}">
             <views:StudentView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CourseListViewModel}">
+            <views:CourseListView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CourseViewModel}">
+            <views:CourseView DataContext="{Binding}"/>
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
