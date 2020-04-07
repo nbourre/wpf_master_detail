@@ -22,8 +22,6 @@ namespace wpf_master_detail.Views
         public StudentListView()
         {
             InitializeComponent();
-
-            DataContext = new StudentListViewModel();
         }
     }
 }

@@ -28,9 +28,16 @@ namespace wpf_master_detail.ViewModels
 			}
 		}
 
+		StudentListViewModel studentListViewModel;
+		StudentViewModel studentViewModel;
+
 		public MainViewModel()
 		{
-			LeftViewModel = new StudentListViewModel();
+			studentViewModel = new StudentViewModel();
+			studentListViewModel = new StudentListViewModel(studentViewModel);
+
+			LeftViewModel = studentListViewModel;
+			CentralViewModel = studentViewModel;
 
 		}
 	}

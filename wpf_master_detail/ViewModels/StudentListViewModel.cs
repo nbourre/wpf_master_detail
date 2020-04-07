@@ -27,15 +27,19 @@ namespace wpf_master_detail.ViewModels
 			get { return selectedStudent; }
 			set { 
 				selectedStudent = value;
+				studentViewModel.Student = selectedStudent;
 				OnPropertyChanged();
 			}
 		}
 
 		StudentDataService studentDataService;
+		StudentViewModel studentViewModel;
 
-		public StudentListViewModel()
+		public StudentListViewModel(StudentViewModel svm)
 		{
 			InitValues();
+
+			studentViewModel = svm;
 		}
 
 		private void InitValues()

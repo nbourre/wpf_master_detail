@@ -7,6 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
             
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Numéro : "/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Nom de famille : "/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Prénom : "/>
+
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Student.RegistrationNumber}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Student.LastName}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Student.FirstName}"/>
+        
     </Grid>
 </UserControl>
