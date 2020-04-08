@@ -17,6 +17,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Titre : "/>
@@ -26,5 +27,15 @@
         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Course.Title}"/>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Course.Number}"/>
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Course.Description}"/>
+
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                  Margin="10" AutoGenerateColumns="False"
+                  ItemsSource="{Binding Course.Enrollments}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Cours" Binding="{Binding StudentName}"/>
+                <DataGridTextColumn Header="Résultat" Binding="{Binding Grade}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
     </Grid>
 </UserControl>

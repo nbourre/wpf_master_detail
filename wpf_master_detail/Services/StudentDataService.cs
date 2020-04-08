@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using wpf_master_detail.Models;
 
 namespace wpf_master_detail.Services
 {
-	public class StudentDataService : IDataService<Student>
+	class StudentDataService : IDataService<Student>
 	{
 		List<Student> students;
 
@@ -126,7 +127,6 @@ namespace wpf_master_detail.Services
 				new Student{ StudentId = 1098, RegistrationNumber = "1159610", FirstName = "Melodie", LastName = "Maldonado" },
 				new Student{ StudentId = 1099, RegistrationNumber = "2110666", FirstName = "Kameko", LastName = "Burgess" }
 			};
-
 		}
 	}
 }

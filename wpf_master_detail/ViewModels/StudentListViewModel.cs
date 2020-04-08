@@ -32,7 +32,7 @@ namespace wpf_master_detail.ViewModels
 			}
 		}
 
-		StudentDataService studentDataService;
+		public StudentDataService studentDataService;
 		StudentViewModel studentViewModel;
 
 		public StudentListViewModel(StudentViewModel svm)

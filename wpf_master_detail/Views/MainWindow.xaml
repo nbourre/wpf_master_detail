@@ -10,7 +10,7 @@
         Title="Projet Master-Detail" Height="450" Width="800">
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:StudentListViewModel}">
-            <views:CourseListView DataContext="{Binding}"/>
+            <views:StudentListView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:StudentViewModel}">
             <views:StudentView DataContext="{Binding}"/>
@@ -28,9 +28,14 @@
                 <MenuItem Header="Nouveau"/>
             </MenuItem>
             <MenuItem Header="Édition"/>
+            <MenuItem Header="Enregistrements">
+                <MenuItem Header="Étudiants" Command="{Binding ChangeViewCommand}" CommandParameter="student"/>
+                <MenuItem Header="Cours" Command="{Binding ChangeViewCommand}" CommandParameter="course"/>
+            </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
-            <Button>Nouveau</Button>
+            <Button Margin="3" Command="{Binding ChangeViewCommand}" CommandParameter="student">Étudiants</Button>
+            <Button Margin="3" Command="{Binding ChangeViewCommand}" CommandParameter="course">Cours</Button>
         </ToolBar>
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock Text="Barre de statut"/>

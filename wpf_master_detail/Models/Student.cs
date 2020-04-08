@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace wpf_master_detail.Models
 {
-    public class Student : INotifyPropertyChanged
+    class Student : INotifyPropertyChanged
     {
         private string registrationNumber;
         private string firstName;
@@ -47,6 +48,18 @@ namespace wpf_master_detail.Models
         }
 
         public string FullName => $"{LastName}, {FirstName}";
+
+        private ObservableCollection<Enrollment> enrollments;
+        public ObservableCollection<Enrollment> Enrollments
+        {
+            get => enrollments;
+            set
+            {
+                enrollments = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

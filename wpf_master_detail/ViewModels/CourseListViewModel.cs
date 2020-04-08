@@ -34,7 +34,7 @@ namespace wpf_master_detail.ViewModels
 			}
 		}
 
-		CourseDataService courseDataService;
+		public CourseDataService courseDataService;
 		CourseViewModel courseViewModel;
 
 		public CourseListViewModel(CourseViewModel vm)

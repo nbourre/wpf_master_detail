@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -13,7 +14,8 @@ namespace wpf_master_detail.Models
         public string Title
         {
             get { return title; }
-            set {
+            set
+            {
                 title = value;
                 OnPropertyChanged();
             }
@@ -24,7 +26,8 @@ namespace wpf_master_detail.Models
         public string Number
         {
             get { return number; }
-            set {
+            set
+            {
                 number = value;
                 OnPropertyChanged();
             }
@@ -35,13 +38,24 @@ namespace wpf_master_detail.Models
         public string Description
         {
             get { return description; }
-            set { 
+            set
+            {
                 description = value;
                 OnPropertyChanged();
             }
         }
 
 
+        private ObservableCollection<Enrollment> enrollments;
+        public ObservableCollection<Enrollment> Enrollments 
+        {  
+            get => enrollments;
+            set
+            {
+                enrollments = value;
+                OnPropertyChanged();
+            }
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

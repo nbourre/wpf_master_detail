@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wpf_master_detail.Views"
+             xmlns:vm="clr-namespace:wpf_master_detail.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -17,6 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Numéro : "/>
@@ -26,6 +28,15 @@
         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Student.RegistrationNumber}"/>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Student.LastName}"/>
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Student.FirstName}"/>
-        
+
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                  Margin="10" AutoGenerateColumns="False"
+                  ItemsSource="{Binding Student.Enrollments}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Cours" Binding="{Binding CourseTitle}"/>
+                <DataGridTextColumn Header="Résultat" Binding="{Binding Grade}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </UserControl>
