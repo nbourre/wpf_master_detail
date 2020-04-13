@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Linq;
 
 namespace wpf_master_detail.Models
 {
@@ -59,6 +60,7 @@ namespace wpf_master_detail.Models
                 OnPropertyChanged();
             }
         }
+            
 
 
         public event PropertyChangedEventHandler PropertyChanged;
